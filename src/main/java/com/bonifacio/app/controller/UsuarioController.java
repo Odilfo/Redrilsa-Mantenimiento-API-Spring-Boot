@@ -75,7 +75,6 @@ public class UsuarioController {
 			usuDb.setEmail(usuario.getEmail());
 			usuDb.setCargo(usuario.getCargo());
 			usuDb.setDni(usuario.getDni());
-			usuDb.setFoto(usuario.getFoto());
 			usuDb.setNombre(usuario.getNombre());
 			usuarioService.updateUsuario(usuDb);
 			
@@ -93,7 +92,6 @@ public class UsuarioController {
 			usuDb.setEmail(usuario.getEmail());
 			usuDb.setCargo(usuario.getCargo());
 			usuDb.setDni(usuario.getDni());
-			usuDb.setFoto(usuario.getFoto());
 			usuDb.setNombre(usuario.getNombre());
 			usuarioService.updateUsuario(usuDb);
 			return new ResponseEntity<>(usuDb,HttpStatus.OK);

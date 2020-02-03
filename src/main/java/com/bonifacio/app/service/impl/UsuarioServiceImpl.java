@@ -13,7 +13,6 @@ import com.bonifacio.app.entities.Usuario;
 import com.bonifacio.app.service.IUsuarioService;
 
 @Service
-
 public class UsuarioServiceImpl implements IUsuarioService {
 	
 	

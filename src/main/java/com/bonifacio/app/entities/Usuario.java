@@ -35,9 +35,6 @@ public class Usuario implements Serializable {
 	private String email;
 	private String password;
 	
-	@Column(length=20000)
-	private String foto;
-	
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="prousuario",referencedColumnName="id")
@@ -91,16 +88,11 @@ public class Usuario implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", dni=" + dni + ", nombre=" + nombre + ", cargo=" + cargo + ", email=" + email
-				+ ", password=" + password + ", foto=" + foto + ", proyecto=" + proyecto + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", cargo=" + cargo + ", dni=" + dni + ", email=" + email
+				+ ", password=" + password + ", proyecto=" + proyecto + "]";
 	}
+	
 
 }

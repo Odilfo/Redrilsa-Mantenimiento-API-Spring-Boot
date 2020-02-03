@@ -10,7 +10,7 @@ public class MUsuario {
 	private String cargo;
 	private String email;
 	private String password;
-	private String foto;
+	
 	
 	public MUsuario(Usuario usuario) {
 		this.id = usuario.getId();
@@ -18,19 +18,19 @@ public class MUsuario {
 		this.nombre =usuario.getNombre();
 		this.cargo = usuario.getCargo();
 		this.email = usuario.getEmail();
-		this.foto = usuario.getFoto();
+		
 	}
 	
 	
 
-	public MUsuario(Long id, String dni, String nombre, String cargo, String email, String foto) {
+	public MUsuario(Long id, String dni, String nombre, String cargo, String email) {
 		super();
 		this.id = id;
 		this.dni = dni;
 		this.nombre = nombre;
 		this.cargo = cargo;
 		this.email = email;
-		this.foto = foto;
+	
 	}
 
 
@@ -81,14 +81,6 @@ public class MUsuario {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
 	}
 
 }
