@@ -39,7 +39,7 @@ public class ClienteController {
 		
 	}
 	@GetMapping("/clientes/{clienid}")
-	public Cliente obtener(@PathVariable(value="clienid")Long clienid) {
+	public Cliente obtener(@PathVariable Long clienid) {
 		Cliente cli=clienteService.findById(clienid);
 		return cli;
 	}

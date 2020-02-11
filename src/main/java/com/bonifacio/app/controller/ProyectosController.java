@@ -39,7 +39,7 @@ public class ProyectosController {
 		
 	}
 	@GetMapping("/proyectos/{proid}")
-	public Proyecto obtener(@PathVariable(value="proid")Long proid) {
+	public Proyecto obtener(@PathVariable Long proid) {
 		Proyecto pro=proyectoService.findById(proid);
 		return pro;
 	}

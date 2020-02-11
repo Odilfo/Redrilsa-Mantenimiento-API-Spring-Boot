@@ -41,7 +41,7 @@ public class AsignacionController {
 	}
 	
 	@GetMapping("/asignaciones/{asigid}")
-	public Asignacion obtener(@PathVariable(value="asigid")Long asigid) {
+	public Asignacion obtener(@PathVariable Long asigid) {
 		Asignacion asi=asignacionService.findById(asigid);
 		return asi;
 	}

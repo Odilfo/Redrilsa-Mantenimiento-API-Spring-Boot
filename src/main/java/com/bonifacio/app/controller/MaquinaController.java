@@ -41,7 +41,7 @@ public class MaquinaController {
 		
 	}
 	@GetMapping("/maquinas/{id}")
-	public Maquina obtener(@PathVariable(value="id")Long id) {
+	public Maquina obtener(@PathVariable Long id) {
 		Maquina maq=maquinaService.findById(id);
 		return maq;
 	}
