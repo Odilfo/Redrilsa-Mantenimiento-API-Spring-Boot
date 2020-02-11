@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bonifacio.app.entities.ApiMessage;
 import com.bonifacio.app.entities.Informe;
 import com.bonifacio.app.service.InformeService;
 
@@ -37,7 +39,7 @@ public class InformeController {
 	
 	}
 	@GetMapping("/informes/{infoid}")
-	public Informe obtener(@PathVariable(value="infoid")Long infoid) {
+	public Informe obtener(@PathVariable Long infoid) {
 		Informe info=informeService.findById(infoid);
 		return info;
 	}
@@ -46,6 +48,12 @@ public class InformeController {
 	public ResponseEntity<Void>addInforme(@RequestBody Informe informe){
 		informeService.saveInforme(informe);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
+		
+	}
+	@DeleteMapping("/informes/{infoid}")
+	public ApiMessage deleteInforme(@PathVariable(value="infoid")Long infoid){
+		informeService.deleteInforme(infoid);
+		return ApiMessage.createMessage("Registro eliminado");
 		
 	}
 	
