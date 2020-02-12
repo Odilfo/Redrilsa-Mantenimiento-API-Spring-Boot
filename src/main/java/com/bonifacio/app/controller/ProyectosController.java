@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import com.bonifacio.app.entities.ApiMessage;
 import com.bonifacio.app.entities.Proyecto;
 import com.bonifacio.app.entities.Usuario;
 import com.bonifacio.app.service.IProyectoService;
@@ -65,9 +67,9 @@ public class ProyectosController {
 		
 	}
 	@DeleteMapping("/proyectos/{proid}")
-	 public ResponseEntity<Void>deleteProyecto(@PathVariable(value="proid")Long proid){
+	 public ApiMessage deleteProyecto(@PathVariable Long proid){
 		proyectoService.deleteById(proid);
-		return new ResponseEntity<Void>(HttpStatus.OK);
+		return ApiMessage.createMessage("El proyecto ha sido eliminado");
 	}
 
 }

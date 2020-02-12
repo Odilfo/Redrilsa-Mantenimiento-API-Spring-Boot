@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bonifacio.app.entities.ApiMessage;
 import com.bonifacio.app.entities.Maquina;
 
 
@@ -54,9 +55,9 @@ public class MaquinaController {
 	}
 	
 	@DeleteMapping("/maquinas/{id}")
-	 public ResponseEntity<Void>deleteMaquina(@PathVariable(value="id")Long id){
+	 public ApiMessage deleteMaquina(@PathVariable Long id){
 		maquinaService.deleteById(id);
-		return new ResponseEntity<Void>(HttpStatus.OK);
+		return ApiMessage.createMessage("La máquina ha sido eliminado");
 	}
 
 

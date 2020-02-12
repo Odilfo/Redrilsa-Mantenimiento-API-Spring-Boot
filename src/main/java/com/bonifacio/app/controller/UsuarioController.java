@@ -76,6 +76,7 @@ public class UsuarioController {
 			usuDb.setCargo(usuario.getCargo());
 			usuDb.setDni(usuario.getDni());
 			usuDb.setNombre(usuario.getNombre());
+			usuDb.setPassword(usuario.getPassword());
 			usuarioService.updateUsuario(usuDb);
 			
 			return new ResponseEntity<>(usuDb,HttpStatus.OK);
@@ -93,6 +94,7 @@ public class UsuarioController {
 			usuDb.setCargo(usuario.getCargo());
 			usuDb.setDni(usuario.getDni());
 			usuDb.setNombre(usuario.getNombre());
+			usuDb.setPassword(usuario.getPassword());
 			usuarioService.updateUsuario(usuDb);
 			return new ResponseEntity<>(usuDb,HttpStatus.OK);
 		}else {
