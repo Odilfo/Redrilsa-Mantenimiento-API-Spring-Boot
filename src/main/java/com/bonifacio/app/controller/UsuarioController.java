@@ -38,6 +38,10 @@ public class UsuarioController {
 	@GetMapping("/usuarios/{id}")
 	public Usuario obtener(@PathVariable(value="id")Long id){
 		Usuario usu=usuarioService.findById(id);
+		if(usu==null) {
+			throw new RuntimeException( 
+					"No se ha encontrado la identificación de usuario:"+id);
+		}
 		return usu;
 				
 	}

@@ -59,8 +59,6 @@ public class MaquinaController {
 		maquinaService.deleteById(id);
 		return ApiMessage.createMessage("La máquina ha sido eliminado");
 	}
-
-
 	
 
 }
