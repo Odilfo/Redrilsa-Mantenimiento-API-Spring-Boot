@@ -31,7 +31,6 @@ public class Proyecto implements Serializable {
 	private String provincia;
 	private String departamento;
 	private String fecha_inicio;
-	private String fecha_fin;
 	private Long prousuario;
 	private Long procliente;
 	
@@ -86,15 +85,6 @@ public class Proyecto implements Serializable {
 	public void setFecha_inicio(String fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-
-	public String getFecha_fin() {
-		return fecha_fin;
-	}
-
-	public void setFecha_fin(String fecha_fin) {
-		this.fecha_fin = fecha_fin;
-	}
-
 	public Long getProusuario() {
 		return prousuario;
 	}
@@ -122,10 +112,9 @@ public class Proyecto implements Serializable {
 	@Override
 	public String toString() {
 		return "Proyecto [proid=" + proid + ", nombre=" + nombre + ", distrito=" + distrito + ", provincia=" + provincia
-				+ ", departamento=" + departamento + ", fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin
-				+ ", prousuario=" + prousuario + ", procliente=" + procliente + ", asignacion=" + asignacion + "]";
+				+ ", departamento=" + departamento + ", fecha_inicio=" + fecha_inicio + ", prousuario=" + prousuario
+				+ ", procliente=" + procliente + ", asignacion=" + asignacion + "]";
 	}
-	
-	
+
 
 }
